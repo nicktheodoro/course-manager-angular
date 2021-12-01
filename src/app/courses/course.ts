@@ -8,7 +8,16 @@ export default class Course {
   rating: number;
   releaseDate: string;
 
-  constructor(id = 1, name = '', imageUrl = '', price = 0, code = '', duration = 0, rating = 0, releaseDate = '') {
+  constructor(
+    id = 1,
+    name = '',
+    imageUrl = '',
+    price = 0,
+    code = '',
+    duration = 0,
+    rating = 0,
+    releaseDate = ''
+  ) {
     this.id = id;
     this.name = name;
     this.imageUrl = imageUrl;
