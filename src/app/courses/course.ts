@@ -7,6 +7,7 @@ export default class Course {
   duration: number;
   rating: number;
   releaseDate: string;
+  description: string;
 
   constructor(
     id = 1,
@@ -16,7 +17,8 @@ export default class Course {
     code = '',
     duration = 0,
     rating = 0,
-    releaseDate = ''
+    releaseDate = '',
+    description = ''
   ) {
     this.id = id;
     this.name = name;
@@ -26,5 +28,6 @@ export default class Course {
     this.duration = duration;
     this.rating = rating;
     this.releaseDate = releaseDate;
+    this.description = description;
   }
 }
