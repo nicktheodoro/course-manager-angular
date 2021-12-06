@@ -1,0 +1,13 @@
+.td-img {
+  width: 40px;
+}
+
+.td-btn {
+  max-width: 8rem;
+}
+
+button,
+a {
+  width: 5rem;
+  margin-left: 1rem;
+}

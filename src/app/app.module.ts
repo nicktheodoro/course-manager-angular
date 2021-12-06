@@ -2,39 +2,50 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { CourseListComponent } from './courses/course-list.component';
-import { StarComponent } from './star/star.component';
+
 import { NavBarComponent } from './nav-bar/nav-bar.component';
-import { ReplacePipe } from './pipe/replace.pipe';
+
+import { CourseListComponent } from './courses/course-list/course-list.component';
+import { CourseInfoComponent } from './courses/course-info/course-info.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+
+import { StarComponent } from './star/star.component';
+import { ReplacePipe } from './pipe/replace.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CourseListComponent,
-    StarComponent,
     NavBarComponent,
-    ReplacePipe,
+    CourseListComponent,
+    CourseInfoComponent,
     NotFoundComponent,
+    StarComponent,
+    ReplacePipe,
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     RouterModule.forRoot([
       {
-        path: '', // a rota base da aplicação
+        path: 'courses',
+        component: CourseListComponent,
+      },
+      {
+        path: 'courses/info/:id',
+        component: CourseInfoComponent,
+      },
+      {
+        path: '',
         redirectTo: 'courses',
         pathMatch: 'full',
       },
       {
-        path: '**', // quando não encontra a rota na nossa aplicação
+        path: '**',
         component: NotFoundComponent,
-      },
-      {
-        path: 'courses',
-        component: CourseListComponent,
       },
     ]),
   ],
